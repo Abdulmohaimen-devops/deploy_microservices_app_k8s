@@ -102,3 +102,5 @@ use this command from https://istio.io/docs/tasks/telemetry/distributed-tracing/
 kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 16686:16686  &
 ``` 
 
+open in your laptop http://localhost:16686 and you will track all trafic
+
