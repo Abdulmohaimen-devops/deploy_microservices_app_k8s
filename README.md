@@ -22,6 +22,7 @@ Find the IP address of your application, then visit the application on your brow
 
 ```
 kubectl get service/frontend-external
+minikube service frontend-external --url
 ```
 
 
