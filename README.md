@@ -11,19 +11,18 @@ This option offers you pre-built public container images that are easy to deploy
 
 Prerequisite: a running Kubernetes cluster (either local or on cloud).
 
-    Clone this repository, and go to the repository directory
+Clone this repository, and go to the repository directory
 
 
-	```
-    Run kubectl apply -f ./release/kubernetes-manifests.yaml to deploy the app.
-    Run kubectl get pods to see pods are in a Ready state.
-	```
+```
+Run kubectl apply -f ./release/kubernetes-manifests.yaml  #to deploy the app.
+```
 
-    Find the IP address of your application, then visit the application on your browser to confirm installation.
+Find the IP address of your application, then visit the application on your browser to confirm installation.
 
-	```
-    kubectl get service/frontend-external
-    ```
+```
+kubectl get service/frontend-external
+```
 
 
 # istio
