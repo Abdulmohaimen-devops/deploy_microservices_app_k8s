@@ -1,6 +1,7 @@
 # deploy_microservices_app_k8s
-
-Option 3: Using Pre-Built Container Images
+this deployment use this repo https://github.com/GoogleCloudPlatform/microservices-demo.git
+clone this repo and move router.yml and deployment.yml to cloned repo
+I will use Option 3: Using Pre-Built Container Images
 
     💡 Recommended if you want to deploy the app faster in fewer steps to an existing cluster.
 
@@ -65,11 +66,36 @@ Get the URL with:
 minikube service istio-ingressgateway -n istio-system --url
 ```
 
-## Example app
 
 ### Example app (from istio)
 
 export PATH="$PATH:~/istio-1.0.3/bin"
-kubectl apply -f <(istioctl kube-inject -f app.yml)
+kubectl apply -f <(istioctl kube-inject -f release/kubernetes-manifests.yaml) #	inject istio container
+kubectl apply -f release/istio-manifests.yaml  #add istio components
 ```
+
+
+now istio is enables 
+
+
+
+### use istio as advanced descion maker 
+
+Use Istio to make 10% of http request go to your custom fork of the frontend
+
+kubectl apply -f deployement2.yml  # add another app to forward some of traffic 
+kubectl apply -f router.yml   # add router decsions and vService
+```
+
+
+now the traffic divided into two pods by 
+
+
+### Integrate Istio with OpenTracing using a tool like Jaeger
+
+
+use this command from https://istio.io/docs/tasks/telemetry/distributed-tracing/jaeger/
+
+kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 16686:16686  &
+``` 
 
