@@ -15,7 +15,7 @@ Clone this repository, and go to the repository directory
 
 
 ```
-Run kubectl apply -f ./release/kubernetes-manifests.yaml  #to deploy the app.
+kubectl apply -f ./release/kubernetes-manifests.yaml  #to deploy the app.
 ```
 
 Find the IP address of your application, then visit the application on your browser to confirm installation.
