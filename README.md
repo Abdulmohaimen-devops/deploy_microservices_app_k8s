@@ -13,14 +13,17 @@ Prerequisite: a running Kubernetes cluster (either local or on cloud).
 
     Clone this repository, and go to the repository directory
 
-    Run kubectl apply -f ./release/kubernetes-manifests.yaml to deploy the app.
 
+	```
+    Run kubectl apply -f ./release/kubernetes-manifests.yaml to deploy the app.
     Run kubectl get pods to see pods are in a Ready state.
+	```
 
     Find the IP address of your application, then visit the application on your browser to confirm installation.
 
+	```
     kubectl get service/frontend-external
-
+    ```
 
 
 # istio
