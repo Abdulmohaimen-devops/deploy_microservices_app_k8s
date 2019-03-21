@@ -85,10 +85,11 @@ now istio is enables
 
 ### use istio as advanced descion maker 
 
-Use Istio to make 10% of http request go to your custom fork of the frontend
+first : Use Istio to make 100% of http request go to  frontend and 0% for frontend2
+secound : : Use Istio to make 100% of http request go to  frontend2 and 0% for frontend
 
 ```
-kubectl apply -f deployement2.yml  # add another app to forward some of traffic 
+kubectl apply -f deployment2.yml  # add another app to forward some of traffic 
 kubectl apply -f router.yml   # add router decsions and vService
 ```
 
