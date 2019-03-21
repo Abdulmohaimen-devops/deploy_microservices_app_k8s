@@ -69,6 +69,7 @@ minikube service istio-ingressgateway -n istio-system --url
 
 ### Example app (from istio)
 
+```
 export PATH="$PATH:~/istio-1.0.3/bin"
 kubectl apply -f <(istioctl kube-inject -f release/kubernetes-manifests.yaml) #	inject istio container
 kubectl apply -f release/istio-manifests.yaml  #add istio components
@@ -83,6 +84,7 @@ now istio is enables
 
 Use Istio to make 10% of http request go to your custom fork of the frontend
 
+```
 kubectl apply -f deployement2.yml  # add another app to forward some of traffic 
 kubectl apply -f router.yml   # add router decsions and vService
 ```
@@ -96,6 +98,7 @@ now the traffic divided into two pods by
 
 use this command from https://istio.io/docs/tasks/telemetry/distributed-tracing/jaeger/
 
+```
 kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 16686:16686  &
 ``` 
 
